@@ -13,7 +13,16 @@ const AddToy = () => {
        const quantity = e.target.quantity.value  
        const description = e.target.description.value 
        const value = {pictureUrl,name,sellerName,sellerEmail,subCategory,price,rating,quantity,description} 
-        console.log(value)
+        
+       fetch('http://localhost:5000/items',{
+        method:'POST',
+        headers:{
+            'content-type':'application/json'
+        },
+        body:JSON.stringify(value)
+       })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
     }
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: `url("https://img.freepik.com/free-photo/top-view-childhood-cancer-awareness-month-background-concepttoys_23-2149499365.jpg?size=626&ext=jpg")` }}>
