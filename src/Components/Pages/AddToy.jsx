@@ -3,16 +3,16 @@ import React from 'react';
 const AddToy = () => {
     const handleSubmit =(e)=>{
         e.preventDefault()
-       const pictureUrl = e.target.pictureUrl.value  
-       const name = e.target.name.value  
-       const sellerName = e.target.sellerName.value  
-       const sellerEmail = e.target.sellerEmail.value  
-       const subCategory = e.target.subCategory.value  
+       const image = e.target.pictureUrl.value  
+       const toyName = e.target.name.value  
+       const name = e.target.sellerName.value  
+       const email = e.target.sellerEmail.value  
+       const subcategory = e.target.subCategory.value  
        const price = e.target.price.value  
        const rating = e.target.rating.value  
-       const quantity = e.target.quantity.value  
+       const availableQuantity = e.target.quantity.value  
        const description = e.target.description.value 
-       const value = {pictureUrl,name,sellerName,sellerEmail,subCategory,price,rating,quantity,description} 
+       const value = {image,name,toyName,email,subcategory,price,rating,availableQuantity,description} 
         
        fetch('http://localhost:5000/items',{
         method:'POST',
@@ -23,6 +23,7 @@ const AddToy = () => {
        })
         .then(res=>res.json())
         .then(data=>console.log(data))
+        e.target.reset()
     }
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: `url("https://img.freepik.com/free-photo/top-view-childhood-cancer-awareness-month-background-concepttoys_23-2149499365.jpg?size=626&ext=jpg")` }}>
