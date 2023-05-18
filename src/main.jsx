@@ -21,7 +21,8 @@ const router = createBrowserRouter([
     children: [
       {
         path:'alltoy',
-        element:<AllToy></AllToy>
+        element:<AllToy></AllToy>,
+        loader:()=> fetch('http://localhost:5000/items')
       },
       {
         path:'mytoy',
@@ -36,7 +37,8 @@ const router = createBrowserRouter([
         element:<Category></Category>,
         loader:({params})=>fetch(`http://localhost:5000/items?subcategory=${params.name}`)
         
-      }
+      },
+      
     ]
   }
 ])

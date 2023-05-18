@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -31,7 +31,7 @@ but with kids</h1>
         >
           <SwiperSlide><div className="card card-side  bg-black  shadow-xl">
   <figure><img src="https://cdn.shopify.com/s/files/1/1152/4590/files/6.png?v=1676907457" alt="Movie"/></figure>
-  <div className="card-body text-white">
+  <div className="card-body  text-white">
     <h2 className="card-title text-white">Electic Toys</h2>
     <p>Click the button to watch on Jetflix app.</p>
     <div className="card-actions justify-end">
