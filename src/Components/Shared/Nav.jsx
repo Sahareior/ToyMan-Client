@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
@@ -24,11 +25,12 @@ const Nav = () => {
             </ul>
           </div>
           <ul className="menu menu-horizontal px-1">
-            <li className='text-xl font-bold'><a>Home</a></li>
+            <li className='text-xl font-bold'><Link to='/'>Home</Link></li>
            
-            <li className='text-xl font-bold'><a>Shop</a></li>
-            <li className='text-xl font-bold'><a>Blog</a></li>
-            <li className='text-xl font-bold'><a>Contact</a></li>
+            <li className='text-xl font-bold'><Link to='/alltoy'>All Toyes</Link></li>
+            <li className='text-xl font-bold'><Link to='/mytoy'>My Toyes</Link ></li>
+            <li className='text-xl font-bold'><Link to='/addtoy'>Add A Toy</Link ></li>
+            <li className='text-xl font-bold'><Link >Blog</Link ></li>
           </ul>
         
         </div>
