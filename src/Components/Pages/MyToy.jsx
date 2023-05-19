@@ -48,11 +48,11 @@ const handleUpdate = (e) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        // Find the item in the data array
+     
         const updatedItem = data.find((d) => d._id === _id);
         console.log(updatedItem)
         if (updatedItem) {
-          // Update the properties of the found item with the updated values
+      
           updatedItem.image = value.image;
           updatedItem.name = value.name;
           updatedItem.toyName = value.toyName;
@@ -63,7 +63,7 @@ const handleUpdate = (e) => {
           updatedItem.availableQuantity = value.availableQuantity;
           updatedItem.description = value.description;
   
-          // Trigger a re-render by setting the data state to a new reference
+          
           setData([...data]);
         }
         console.log(result)
@@ -79,6 +79,12 @@ const handleUpdate = (e) => {
   const handleDelete=(id)=>{
     fetch(`http://localhost:5000/items/${id}`,{
         method: 'DELETE'
+    })
+    .then(res=> res.json())
+    .then(result => {
+        const newData = data.filter(d=>d._id !== id)
+        setData(newData)
+        console.log(result)
     })
     
   }
