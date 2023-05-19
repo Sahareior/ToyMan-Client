@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 const AllToy = () => {
     const data = useLoaderData()
-    console.log(data)
+
     return (
         <div className="overflow-x-auto mt-10">
   <table className="table table-compact w-full">
