@@ -16,31 +16,66 @@ const handleClick=(id)=>{
 }
 
 
-const handleSubmit =(e)=>{
-    e.preventDefault()
-   const image = e.target.pictureUrl.value  
-   const toyName = e.target.name.value  
-   const name = e.target.sellerName.value  
-   const email = e.target.sellerEmail.value  
-   const subcategory = e.target.subCategory.value  
-   const price = e.target.price.value  
-   const rating = e.target.rating.value  
-   const availableQuantity = e.target.quantity.value  
-   const description = e.target.description.value 
-   const value = {image,name,toyName,email,subcategory,price,rating,availableQuantity,description} 
-    
-   fetch(`http://localhost:5000/items/${_id}`,{
-    method:'PUT',
-    headers:{
-        'content-type':'application/json'
-    },
-    body:JSON.stringify(value)
-   })
-    .then(res=>res.json())
-    .then(data=>console.log(data))
-    e.target.reset()
-}
-
+const handleSubmit = (e) => {
+    e.preventDefault();
+    const image = e.target.pictureUrl.value;
+    const toyName = e.target.name.value;
+    const name = e.target.sellerName.value;
+    const email = e.target.sellerEmail.value;
+    const subcategory = e.target.subCategory.value;
+    const price = e.target.price.value;
+    const rating = e.target.rating.value;
+    const availableQuantity = e.target.quantity.value;
+    const description = e.target.description.value;
+    const value = {
+      image,
+      name,
+      toyName,
+      email,
+      subcategory,
+      price,
+      rating,
+      availableQuantity,
+      description,
+    };
+  
+    fetch(`http://localhost:5000/items/${_id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(value),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        // Find the item in the data array
+        const updatedItem = data.find((d) => d._id === _id);
+        console.log(updatedItem)
+        if (updatedItem) {
+          // Update the properties of the found item with the updated values
+          updatedItem.image = value.image;
+          updatedItem.name = value.name;
+          updatedItem.toyName = value.toyName;
+          updatedItem.email = value.email;
+          updatedItem.subcategory = value.subcategory;
+          updatedItem.price = value.price;
+          updatedItem.rating = value.rating;
+          updatedItem.availableQuantity = value.availableQuantity;
+          updatedItem.description = value.description;
+  
+          // Trigger a re-render by setting the data state to a new reference
+          setData([...data]);
+        }
+        console.log(result)
+      })
+      .catch((error) => {
+        console.log('Error updating data:', error);
+      });
+  
+    e.target.reset();
+  };
+  
+  
 
 const {_id,name,toyName,image,email,subcategory,price,rating,availableQuantity,description} = clicked
 
