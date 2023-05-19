@@ -16,7 +16,7 @@ const handleClick=(id)=>{
 }
 
 
-const handleSubmit = (e) => {
+const handleUpdate = (e) => {
     e.preventDefault();
     const image = e.target.pictureUrl.value;
     const toyName = e.target.name.value;
@@ -74,6 +74,14 @@ const handleSubmit = (e) => {
   
     e.target.reset();
   };
+
+
+  const handleDelete=(id)=>{
+    fetch(`http://localhost:5000/items/${id}`,{
+        method: 'DELETE'
+    })
+    
+  }
   
   
 
@@ -96,7 +104,7 @@ const {_id,name,toyName,image,email,subcategory,price,rating,availableQuantity,d
           {   data.map(d => (
             <tr key={d._id}>
               <td>
-                <button className="btn btn-circle btn-outline">
+                <button onClick={()=>handleDelete(d._id)} className="btn btn-circle btn-outline">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -104,6 +112,7 @@ const {_id,name,toyName,image,email,subcategory,price,rating,availableQuantity,d
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
+                    
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -132,7 +141,7 @@ const {_id,name,toyName,image,email,subcategory,price,rating,availableQuantity,d
 <div className="modal modal-bottom xl:modal-middle">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
-    <form onSubmit={handleSubmit} className='text-black'>
+    <form onSubmit={handleUpdate} className='text-black'>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block mb-2">Picture URL</label>
