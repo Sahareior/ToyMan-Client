@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { getItems } from '../Tools/Tools';
@@ -7,8 +7,19 @@ const Nav = () => {
   const{user,logOut} = useContext(AuthContext)
 
   const cartData = getItems()
-  console.log(cartData)
-  const count = Object.keys(cartData).length
+  // console.log(cartData)
+  // let count 
+  // if(!cart){
+  //   console.log('hii')
+  //   count = Object.keys(cartData).length
+  // }
+  // else{
+  //   count = cart.length
+    
+  // }
+  let count = Object.keys(cartData).length
+
+  console.log(count)
   
   
   const photo = user? <img src={user.photoURL  } />: " "

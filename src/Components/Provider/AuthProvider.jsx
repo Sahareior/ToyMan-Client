@@ -11,7 +11,7 @@ const auth = getAuth(app)
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
+    const [cart,setCart] = useState([])
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -84,7 +84,9 @@ const AuthProvider = ({children}) => {
         logOut,
         loading,
         user,
-        auth
+        auth,
+        cart,
+        setCart
     }
     return (
         <AuthContext.Provider value={authInfo}>

@@ -1,17 +1,21 @@
-import  { useEffect, useState } from 'react';
+import  { useContext, useEffect, useState } from 'react';
 import { addTodb } from '../../Tools/Tools';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const AllItems = () => {
     const [data, setData] = useState([])
+    const {setCart,cart} = useContext(AuthContext)
     useEffect(()=>{
         fetch("http://localhost:5000/items")
         .then(res=>res.json())
         .then(result => setData(result))
     },[])
     const handleCart =(id) =>{
-      console.log(id)
+      const data = [...cart,id]
+      setCart(data)
       addTodb(id)
     }
+    console.log(cart)
     return (
         <div className='w-full text-center mt-12'>
             <h1 className='text-5xl font-bold '>Our Products</h1>
