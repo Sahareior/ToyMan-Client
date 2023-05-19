@@ -10,10 +10,11 @@ const AllItems = () => {
         .then(res=>res.json())
         .then(result => setData(result))
     },[])
-    const handleCart =(id) =>{
-      const data = [...cart,id]
+    const handleCart =(d) =>{
+      const data = [...cart,d]
       setCart(data)
-      addTodb(id)
+      console.log(d)
+      addTodb(d._id)
     }
     console.log(cart)
     return (
@@ -31,7 +32,7 @@ const AllItems = () => {
                   <h1>{d.availableQuantity}</h1>
                   </div>
                    <div className="card-actions justify-between">
-                    <button onClick={()=>handleCart(d._id)} className='btn btn-secondary'>Add to Cart</button>
+                    <button onClick={()=>handleCart(d)} className='btn btn-secondary'>Add to Cart</button>
                     <button className="btn btn-primary">Buy Now</button>
                   </div>
                 </div>

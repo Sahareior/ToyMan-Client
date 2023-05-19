@@ -13,6 +13,7 @@ import Cart from './Components/Pages/Cart/Cart.jsx'
 import AuthProvider from './Components/Provider/AuthProvider.jsx'
 import Login from './Components/Pages/Login/Login.jsx'
 import Reg from './Components/Pages/Reg/Reg.jsx'
+import PrivetRoute from './Components/Pages/PrivetRoute/PrivetRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,11 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path:'mytoy',
-        element:<MyToy></MyToy>
+        element:<PrivetRoute><MyToy></MyToy></PrivetRoute>
       },
       {
         path:'addtoy',
-        element: <AddToy></AddToy>
+        element: <PrivetRoute><AddToy></AddToy></PrivetRoute>
       },
       {
         path:'cat/:name',

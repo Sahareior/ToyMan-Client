@@ -1,11 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
     const [error,setError] = useState(null)
     const navigate = useNavigate()
+    const location = useLocation()
+    
+    const path = location.state?.from?.pathname || '/'
+
     const{signIn} = useContext(AuthContext)
+    
     const handleSubmit = (e)=>{
         e.preventDefault()
         const email = e.target.email.value 
@@ -18,7 +23,7 @@ const Login = () => {
           .then (result => {
               const user = result.user
               console.log(user)
-              
+              navigate(path)
             //   navigate(path, { replace:true })
           }).catch(error =>{
             setError("Please check your email and password")

@@ -1,4 +1,4 @@
-import  { useContext } from 'react';
+import  { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { getItems } from '../Tools/Tools';
@@ -6,20 +6,31 @@ import { getItems } from '../Tools/Tools';
 const Nav = () => {
   const{user,logOut} = useContext(AuthContext)
 
+  // const [total, setTotal] = useState(0);
+
+  // useEffect(() => {
+  //   let newTotal = 0;
+  //   cart.forEach((p) => {
+  //     newTotal += p.price;
+  //   });
+  //   setTotal(newTotal);
+  //   localStorage.setItem('total', newTotal.toString());
+  // }, []);
+  
+  // useEffect(() => {
+  //   const storedTotal = localStorage.getItem('total');
+  //   // if (storedTotal !== null) {
+  //   //   setTotal(Number(storedTotal));
+  //   }
+  // }, []);
+  
+
+
   const cartData = getItems()
-  // console.log(cartData)
-  // let count 
-  // if(!cart){
-  //   console.log('hii')
-  //   count = Object.keys(cartData).length
-  // }
-  // else{
-  //   count = cart.length
-    
-  // }
+
   let count = Object.keys(cartData).length
 
-  console.log(count)
+
   
   
   const photo = user? <img src={user.photoURL  } />: " "
@@ -72,7 +83,7 @@ const Nav = () => {
       <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
         <div className="card-body">
           <span className="font-bold text-lg">8 Items</span>
-          <span className="text-info">Subtotal: $999</span>
+          <span className="text-info">Subtotal: $</span>
           <div className="card-actions">
             <Link to='/cart'><button className="btn btn-primary btn-block">View cart</button></Link>
           </div>
