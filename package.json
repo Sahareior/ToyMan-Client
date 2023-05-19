@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "daisyui": "^2.51.6",
+    "firebase": "^9.22.0",
     "lightgallery": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-heroicons-ui": "^1.0.2",
     "react-photo-album": "^2.2.2",
     "react-photo-gallery": "^8.0.0",
     "react-router-dom": "^6.11.2",

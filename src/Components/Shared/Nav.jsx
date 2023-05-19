@@ -24,7 +24,7 @@ const Nav = () => {
               <li><a>Item 3</a></li>
             </ul>
           </div>
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-h sm:hidden orizontal px-1">
             <li className='text-xl font-bold'><Link to='/'>Home</Link></li>
            
             <li className='text-xl font-bold'><Link to='/alltoy'>All Toyes</Link></li>
@@ -52,7 +52,7 @@ const Nav = () => {
           <span className="font-bold text-lg">8 Items</span>
           <span className="text-info">Subtotal: $999</span>
           <div className="card-actions">
-            <button className="btn btn-primary btn-block">View cart</button>
+            <Link to='/cart'><button className="btn btn-primary btn-block">View cart</button></Link>
           </div>
         </div>
       </div>

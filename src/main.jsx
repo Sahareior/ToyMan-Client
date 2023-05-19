@@ -9,6 +9,8 @@ import AllToy from './Components/Pages/AllToy.jsx'
 import MyToy from './Components/Pages/MyToy.jsx'
 import AddToy from './Components/Pages/AddToy.jsx'
 import Category from './Components/Pages/Sections/Category.jsx'
+import Cart from './Components/Pages/Cart/Cart.jsx'
+import AuthProvider from './Components/Provider/AuthProvider.jsx'
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
         loader:({params})=>fetch(`http://localhost:5000/items?subcategory=${params.name}`)
         
       },
+      {
+        path:'cart',
+        element:<Cart></Cart>
+      }
       
     ]
   }
@@ -45,11 +51,13 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className='w-11/12 mx-auto'>
+  <AuthProvider>
+  <div className='w-11/12 mx-auto'>
     <RouterProvider router={router}>
 
 <App />
 </RouterProvider>
     </div>
+  </AuthProvider>
   </React.StrictMode>,
 )
