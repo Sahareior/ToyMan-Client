@@ -11,6 +11,8 @@ import AddToy from './Components/Pages/AddToy.jsx'
 import Category from './Components/Pages/Sections/Category.jsx'
 import Cart from './Components/Pages/Cart/Cart.jsx'
 import AuthProvider from './Components/Provider/AuthProvider.jsx'
+import Login from './Components/Pages/Login/Login.jsx'
+import Reg from './Components/Pages/Reg/Reg.jsx'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
       {
         path:'cart',
         element:<Cart></Cart>
+      },
+      {
+        path:'login',
+        element:<Login></Login>
+      },
+      {
+        path:'reg',
+        element:<Reg></Reg>
       }
       
     ]
