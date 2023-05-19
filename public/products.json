@@ -8,7 +8,8 @@
         "subcategory": "Toys & Games",
         "price": 9.99,
         "availableQuantity": 5,
-        "image": "path/to/image1.jpg"
+        "image": "path/to/image1.jpg",
+        "stars":5
       },
       {
         "name": "Jane Smith",
@@ -18,7 +19,8 @@
         "subcategory": "Toys & Games",
         "price": 14.99,
         "availableQuantity": 10,
-        "image": "path/to/image2.jpg"
+        "image": "path/to/image2.jpg",
+        "stars":3
       },
       {
         "name": "David Johnson",
@@ -28,7 +30,8 @@
         "subcategory": "Toys & Games",
         "price": 19.99,
         "availableQuantity": 8,
-        "image": "path/to/image3.jpg"
+        "image": "path/to/image3.jpg",
+        "stars":2
       },
       {
         "name": "Emily Wilson",
@@ -38,7 +41,8 @@
         "subcategory": "Toys & Games",
         "price": 12.99,
         "availableQuantity": 3,
-        "image": "path/to/image4.jpg"
+        "image": "path/to/image4.jpg",
+        "stars":5
       },
       {
         "name": "Michael Brown",
@@ -48,7 +52,8 @@
         "subcategory": "Toys & Games",
         "price": 29.99,
         "availableQuantity": 7,
-        "image": "path/to/image5.jpg"
+        "image": "path/to/image5.jpg",
+        "stars":2
       },
       {
         "name": "Sophia Taylor",
@@ -58,7 +63,8 @@
         "subcategory": "Toys & Games",
         "price": 24.99,
         "availableQuantity": 2,
-        "image": "path/to/image6.jpg"
+        "image": "path/to/image6.jpg",
+        "stars":4
       },
       {
         "name": "Daniel Wilson",
@@ -67,7 +73,8 @@
         "subcategory": "Toys & Games",
         "price": 39.99,
         "availableQuantity": 6,
-        "image": "path/to/image7.jpg"
+        "image": "path/to/image7.jpg",
+        "stars":1
       },
       {
         "name": "Olivia Anderson",
@@ -76,7 +83,8 @@
         "subcategory": "Toys & Games",
         "price": 17.99,
         "availableQuantity": 9,
-        "image": "path/to/image8.jpg"
+        "image": "path/to/image8.jpg",
+        "stars":3
       },
       {
         "name": "William Davis",
@@ -84,7 +92,8 @@
         "subcategory": "Toys & Games",
         "price": 22.99,
         "availableQuantity": 4,
-        "image": "path/to/image9.jpg"
+        "image": "path/to/image9.jpg",
+        "stars":1
       },
       {
         "name": "Ava Miller",
@@ -92,7 +101,8 @@
         "subcategory": "Outdoor Toys",
         "price": 129.99,
         "availableQuantity": 1,
-        "image": "path/to/image10.jpg"
+        "image": "path/to/image10.jpg",
+        "stars":5
       }
     ]
     

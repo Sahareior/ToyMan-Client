@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "daisyui": "^2.51.6",
+    "lightgallery": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-photo-album": "^2.2.2",
+    "react-photo-gallery": "^8.0.0",
     "react-router-dom": "^6.11.2",
+    "react-slick": "^0.29.0",
     "react-tabs": "^6.0.1",
     "swiper": "^9.3.2"
   },
