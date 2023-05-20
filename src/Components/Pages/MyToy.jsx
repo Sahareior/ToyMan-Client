@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const MyToy = () => {
   const [data, setData] = useState([]);
@@ -49,7 +50,15 @@ const handleUpdate = (e) => {
     })
       .then((res) => res.json())
       .then((result) => {
-     
+       if(result.acknowledged){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Info has Updated',
+          showConfirmButton: false,
+          timer: 1500
+        })
+       }
         const updatedItem = data.find((d) => d._id === _id);
         console.log(updatedItem)
         if (updatedItem) {
@@ -75,19 +84,38 @@ const handleUpdate = (e) => {
   
     e.target.reset();
   };
-
+// acknowledged
 
   const handleDelete=(id)=>{
-    fetch(`http://localhost:5000/items/${id}`,{
-        method: 'DELETE'
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/items/${id}`,{
+          method: 'DELETE'
+      })
+      .then(res=> res.json())
+      .then(result => {
+        
+          const newData = data.filter(d=>d._id !== id)
+          setData(newData)
+          console.log(result)
+      })
+      
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
     })
-    .then(res=> res.json())
-    .then(result => {
-        const newData = data.filter(d=>d._id !== id)
-        setData(newData)
-        console.log(result)
-    })
-    
+   
   }
   
   

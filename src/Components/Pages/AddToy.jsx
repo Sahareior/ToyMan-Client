@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
   const{user} = useContext(AuthContext)
@@ -25,7 +26,17 @@ const AddToy = () => {
         body:JSON.stringify(value)
        })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+          if(data.acknowledged){
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Item added Successfully!',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
+        })
         e.target.reset()
     }
     return (

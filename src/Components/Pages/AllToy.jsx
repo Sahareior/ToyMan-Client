@@ -7,12 +7,13 @@ const AllToy = () => {
     const [result,setResult] = useState([])
 
     const[input, setInput] = useState("")
-
     useEffect(() => {
-      if (input.trim() === "") {
+      const formattedInput = input.trim().replace(/\s/g, "");
+    
+      if (formattedInput === "") {
         setResult(data);
       } else {
-        const find = data.filter(d => d.toyName === input);
+        const find = data.filter(d => d.toyName.toLowerCase().replace(/\s/g, "").includes(formattedInput.toLowerCase()));
         setResult(find);
       }
     }, [input, data]);

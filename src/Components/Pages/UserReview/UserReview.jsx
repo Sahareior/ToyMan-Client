@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import Swal from 'sweetalert2'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,7 +21,7 @@ const UserReview = () => {
       .then((res) => res.json())
       .then((result) => setData(result));
   }, []);
-console.log(data)
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const review = e.target.review.value;
@@ -35,7 +35,20 @@ console.log(data)
       body: JSON.stringify(value),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((result) =>{
+        console.log(result)
+        if(result.acknowledged){
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Thanks for reviewing Us!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+        e.target.reset()
+      
+      });
   };
 
   return (
