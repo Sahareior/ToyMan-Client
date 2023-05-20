@@ -3,7 +3,9 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AllToy = () => {
     const data = useLoaderData()
-
+    const [clicked, setClicked] = useState(false)
+    const [dec, setDec] = useState([])
+    
     const [result,setResult] = useState([])
 
     const[input, setInput] = useState("")
@@ -18,13 +20,37 @@ const AllToy = () => {
       }
     }, [input, data]);
     
+    console.log(clicked)
 
+  
+      useEffect(()=>{
+        fetch('http://localhost:5000/items?sort=desc')
+        .then(res=>res.json())
+        .then(data=> {
+         
+          if(clicked){
+            setDec(data)
+          }
+        })
+      },[clicked])
+    
+let array 
+if(clicked){
+  array = dec
+}
+else{
+  array = result
+}
 
+const handleClick = () => {
+  setClicked(prevValue => !prevValue);
+};
 
 
 
     return (
-        <div className="overflow-x-auto mt-10">
+        <div className="overflow-x-auto w-full mt-10">
+          <button onClick={handleClick} className="btn btn-warning mx-auto">{clicked?'Click to make it Accending':'Click to make it Descending'}</button>
           <div className="my-4 mx-3">
           <input
   type="text"
@@ -56,7 +82,7 @@ const AllToy = () => {
 
 
      {
-       result && result.map(d=>  <tr key={d._id}>
+       array && array.map(d=>  <tr key={d._id}>
              
             <td>{d.name}</td> 
             <td>{d.toyName}</td> 

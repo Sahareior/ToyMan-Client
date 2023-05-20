@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   useEffect(() => {
     fetch('products.json')
@@ -26,7 +30,7 @@ const Products = () => {
       <p className='text-center text-xl mt-5 text-cyan-400'>Popular Products</p>
       <div className="md:grid  grid-cols-4 mt-5 gap-x-6 gap-y-6">
         {products.map(data =>
-          <div key={data.length} className="card w-80 bg-base-100 shadow-xl">
+          <div data-aos="flip-up" key={data.length} className="card w-80 bg-base-100 shadow-xl">
             <figure><img src={data.photo} alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">

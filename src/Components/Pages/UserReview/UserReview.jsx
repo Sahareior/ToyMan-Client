@@ -52,7 +52,14 @@ const UserReview = () => {
   };
 
   return (
-    <div className="mt-9 flex flex-col gap-6 p-10">
+    <div className="mt-9 flex flex-col gap-6 p-10" style={{
+      backgroundImage:
+        "url('https://img.freepik.com/free-vector/torn-paper-piece-design-background_1055-13614.jpg?size=626&ext=jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      
+    }}>
       <h1 className="text-center font-bold text-4xl">What They Say</h1>
       <p className="text-center text-cyan-400 mt-4">CUSTOMER TESTIMONIALS</p>
       <div className="w-full ">

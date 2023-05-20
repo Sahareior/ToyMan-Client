@@ -2,12 +2,18 @@ import React, { useContext, useEffect, useState } from 'react';
 import { addTodb } from '../../Tools/Tools';
 import {  FaShoppingCart } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
   const {cart,setCart} = useContext(AuthContext)
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(6); 
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   useEffect(() => {
     fetch("http://localhost:5000/items")
@@ -47,7 +53,7 @@ const Home = () => {
       <div className='md:grid mx-auto ml-9 mt-9 justify-between gap-6 grid-cols-3'>
         {
           currentItems.map(d => (
-            <div key={d.length} className=" gap-y-3 flex justify-between card card-bordered  w-96 bg-base-100 shadow-xl">
+            <div data-aos="zoom-in" key={d.length} className=" gap-y-3 flex justify-between card card-bordered  w-96 bg-base-100 shadow-xl">
               <figure><img src={d.image} alt="Shoes" /></figure>
               <div className="card-body">
                 <h2 className="card-title">{d.toyName}</h2>

@@ -5,15 +5,21 @@ import ElictricToy from '../SubCategorys/Home';
 import CarToy from '../SubCategorys/CarToy';
 import ElictronicToy from '../SubCategorys/ElictronicToy';
 import Dolls from '../SubCategorys/Dolls';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 
 const AllItems = () => {
-    
+  useEffect(() => {
+    AOS.init();
+  }, []);
     
 
 
     return (
       
-        <div className='w-full  text-center mt-12'>
+        <div data-aos="fade-up" data-aos-anchor-placement="top-center" className='w-full  text-center mt-12'>
          
             <h1 className='text-5xl font-bold '>Our Products</h1>
             <p className='font-bole text-cyan-400 text-xl mt-4'>Choose your best product</p>
