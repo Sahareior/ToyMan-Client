@@ -53,7 +53,7 @@ const UserReview = () => {
       <div className="mx-auto mt-7 w-1/4">
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Your name" name="name" className="input input-bordered input-info w-full max-w-xs" />
-          <textarea placeholder="Bio" name="review" className="textarea textarea-bordered textarea-lg w-full max-w-xs"></textarea>
+          <textarea placeholder="Your opinion" name="review" className="textarea textarea-bordered textarea-lg w-full max-w-xs"></textarea>
           <button className="btn btn-accent">Submit</button>
         </form>
       </div>
@@ -62,3 +62,5 @@ const UserReview = () => {
 };
 
 export default UserReview;
+
+

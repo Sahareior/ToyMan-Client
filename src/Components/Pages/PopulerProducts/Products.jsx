@@ -11,7 +11,7 @@ const Products = () => {
       .then(data => setProducts(data));
   }, []);
 
-  // Helper function to generate star elements
+  
   const generateStars = (rating) => {
     const stars = [];
     for (let i = 0; i < rating; i++) {

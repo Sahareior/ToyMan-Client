@@ -15,6 +15,7 @@ import Login from './Components/Pages/Login/Login.jsx'
 import Reg from './Components/Pages/Reg/Reg.jsx'
 import PrivetRoute from './Components/Pages/PrivetRoute/PrivetRoute.jsx'
 import UserReview from './Components/Pages/UserReview/UserReview.jsx'
+import Details from './Components/Pages/Details/Details.jsx'
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,11 @@ const router = createBrowserRouter([
         path:'reg',
         element:<Reg></Reg>
       },
-      
+      {
+        path:'details/:id',
+        element:<Details></Details>,
+        loader:({params})=> fetch(`http://localhost:5000/items/${params.id}`)
+      }
       
     ]
   }

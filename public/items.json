@@ -1,0 +1,183 @@
+[
+    {
+      "name": "John Doe",
+      "toyName": "Action Figure",
+      "subcategory": "dolls",
+      "price": 9.99,
+      "availableQuantity": 5,
+      "rating": 4.5,
+      "image": "https://img.freepik.com/free-vector/flat-design-samurai-background_52683-70562.jpg?size=626&ext=jpg"
+    },
+    {
+      "name": "Jane Smith",
+      "toyName": "Building Blocks",
+      "subcategory": "dolls",
+      "price": 12.99,
+      "availableQuantity": 8,
+      "rating": 4.2,
+      "image": "https://img.freepik.com/free-vector/letters-3d-white-cubes-colorful-business-pointers-abstract-background_1284-39405.jpg?size=626&ext=jpg"
+    },
+    {
+      "name": "Alex Johnson",
+      "toyName": "Dollhouse",
+      "subcategory": "dolls",
+      "price": 24.99,
+      "availableQuantity": 3,
+      "rating": 4.8,
+      "image": "https://img.freepik.com/premium-vector/doll-house-cartoon-illustration_96037-196.jpg?size=626&ext=jpg"
+    },
+    {
+      "name": "Emily Davis",
+      "toyName": "Piccu Doll",
+      "subcategory": "dolls",
+      "price": 19.99,
+      "availableQuantity": 6,
+      "rating": 4.6,
+      "image": "https://img.freepik.com/free-vector/cute-girl-pink-bow-blue-dress_1450-106.jpg?size=626&ext=jpg"
+    },
+    {
+      "name": "Michael Wilson",
+      "toyName": "Remote Control Car",
+      "subcategory": "cars",
+      "price": 29.99,
+      "availableQuantity": 10,
+      "rating": 4.9,
+      "image": "https://img.freepik.com/premium-vector/isometric-flying-taxi-futuristic-concept-car-isolated_272153-42.jpg?size=626&ext=jpg"
+    },
+    {
+      "name": "Sarah Thompson",
+      "toyName": "Happy Demon",
+      "subcategory": "doll",
+      "price": 14.99,
+      "availableQuantity": 4,
+      "rating": 4.4,
+      "image": "https://img.freepik.com/premium-vector/flat-cute-animal-little-devil-bunny-halloween-illustration-kids-cute-halloween-character_69135-1388.jpg?size=626&ext=jpg"
+    },
+    {
+      "name": "David Miller",
+      "toyName": "Destroyer Robot",
+      "subcategory": "electronic",
+      "price": 8.99,
+      "availableQuantity": 12,
+      "rating": 4.7,
+      "image": "https://img.freepik.com/free-photo/robot-boy-walk-down-street_1340-27697.jpg?size=626&ext=jpg"
+    },
+    {
+      "name": "Olivia Brown",
+      "toyName": "Musical Keyboard",
+      "subcategory": "electronic",
+      "price": 39.99,
+      "availableQuantity": 2,
+      "rating": 4.3,
+      "image": "https://img.freepik.com/free-vector/music-design-yellow-illustration_24877-49373.jpg?size=626&ext=jpg"
+    },
+    {
+      "name": "Daniel Davis",
+      "toyName": " Driving Monkey",
+      "subcategory": "cars",
+      "price": 49.99,
+      "availableQuantity": 7,
+      "rating": 4.1,
+      "image": "https://img.freepik.com/free-photo/fun-gorilla-3d-illustration_183364-80089.jpg?size=626&ext=jpg"
+    },
+    {
+      "name": "Sophia Wilson",
+      "toyName": "Science Experiment Kit",
+      "subcategory": "electronic",
+      "price": 29.99,
+      "availableQuantity": 3,
+      "rating": 4.7,
+      "image": "https://img.freepik.com/free-vector/children-fixing-robot-together_1308-77979.jpg?size=626&ext=jpg"
+    },
+    {
+        "name": "Liam Johnson",
+        "toyName": "UUZ",
+        "subcategory": "cars",
+        "price": 29.99,
+        "availableQuantity": 7,
+        "rating": 4.5,
+        "image": "https://img.freepik.com/premium-photo/boy-is-holding-joystick-plays-with-radio-control-car_244784-199.jpg?size=626&ext=jpg"
+      },
+      {
+        "name": "Emma Thompson",
+        "toyName": "Fighting Robot",
+        "subcategory": "electronic",
+        "price": 39.99,
+        "availableQuantity": 4,
+        "rating": 4.2,
+        "image": "https://img.freepik.com/premium-photo/robot-with-gun-is-standing-small-robot_782419-10062.jpg?size=626&ext=jpg"
+      },
+      {
+        "name": "Noah Miller",
+        "toyName": "3d Robot",
+        "subcategory": "electronic",
+        "price": 19.99,
+        "availableQuantity": 6,
+        "rating": 4.8,
+        "image": "https://img.freepik.com/free-photo/robot-character-with-smart-phone_1048-3573.jpg?size=626&ext=jpg"
+      },
+      {
+        "name": "Olivia Davis",
+        "toyName": "Copter",
+        "subcategory": "cars",
+        "price": 34.99,
+        "availableQuantity": 9,
+        "rating": 4.6,
+        "image": "https://img.freepik.com/premium-vector/aeroplane-white-background_33070-1515.jpg?size=626&ext=jpg"
+      },
+      {
+        "name": "Sophia Wilson",
+        "toyName": "Dolls Collections",
+        "subcategory": "dolls",
+        "price": 26.99,
+        "availableQuantity": 12,
+        "rating": 4.9,
+        "image": "https://img.freepik.com/free-vector/hand-drawn-christmas-toy-collection_23-2148747734.jpg?size=626&ext=jpg"
+      },
+      {
+        "name": "Mason Brown",
+        "toyName": "Construction Vehicle Set",
+        "subcategory": "electronic",
+        "price": 21.99,
+        "availableQuantity": 8,
+        "rating": 4.4,
+        "image": "https://img.freepik.com/free-vector/collection-toys-white-background_1308-2403.jpg?size=626&ext=jpg"
+      },
+      {
+        "name": "Ava Smith",
+        "toyName": "Princess Dress-up Set",
+        "subcategory": "dolls",
+        "price": 16.99,
+        "availableQuantity": 5,
+        "rating": 4.7,
+        "image": "https://img.freepik.com/free-vector/princesses-constructor-set_1284-24791.jpg?size=626&ext=jpg"
+      },
+      {
+        "name": "William Johnson",
+        "toyName": "Racing Car Track",
+        "subcategory": "cars",
+        "price": 49.99,
+        "availableQuantity": 3,
+        "rating": 4.3,
+        "image": "https://img.freepik.com/free-vector/sport-cars-drifting-top-view-illustration_1284-9781.jpg?size=626&ext=jpg"
+      },
+      {
+        "name": "Isabella Davis",
+        "toyName": "Eletrical Guitter",
+        "subcategory": "electronic",
+        "price": 32.99,
+        "availableQuantity": 6,
+        "rating": 4.1,
+        "image": "https://img.freepik.com/free-photo/white-young-boy-with-electric-guitar-shows-heavy-metal-gesture_186202-4349.jpg?size=626&ext=jpg"
+      },
+      {
+        "name": "James Wilson",
+        "toyName": "Painting Robot",
+        "subcategory": "electronic",
+        "price": 37.99,
+        "availableQuantity": 2,
+        "rating": 4.7,
+        "image": "https://img.freepik.com/free-vector/artist-robot_1268-53.jpg?size=626&ext=jpg"
+      }
+  ]
+  

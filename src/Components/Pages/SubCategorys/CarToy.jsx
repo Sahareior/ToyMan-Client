@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import {  FaShoppingCart } from 'react-icons/fa';
 import { addTodb } from '../../Tools/Tools';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const CarToy = () => {
+  const {cart,setCart} = useContext(AuthContext)
     const [data, setData] = useState([])
     useEffect(()=>{
-        fetch("http://localhost:5000/items?subcategory=Puzzles")
+        fetch("http://localhost:5000/items?subcategory=cars")
         .then(res=>res.json())
         .then(result => setData(result))
     },[])
     const handleCart =(d) =>{
-    //   const data = [...cart,d]
-    //   setCart(data)
-    //   console.log(d)
+      const data = [...cart,d]
+      setCart(data)
+      
       addTodb(d._id)
     }
     return (
