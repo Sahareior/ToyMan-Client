@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const MyToy = () => {
   const [data, setData] = useState([]);
   const [clicked,setClicked] = useState({})
-  
+  const {user} = useContext(AuthContext)
 
   useEffect(() => {
-    fetch('http://localhost:5000/items?email=sijan@gmail.com')
+    fetch(`http://localhost:5000/items?email=${user.email}`)
       .then(res => res.json())
       .then(result => setData(result));
   }, []);
@@ -188,7 +189,8 @@ const {_id,name,toyName,image,email,subcategory,price,rating,availableQuantity,d
               type="email"
               name="sellerEmail"
             defaultValue={email}
-              className="w-full rounded border p-2"
+            disabled
+              className="w-full rounded border bg-slate-300 p-2"
               placeholder="Enter Seller Email"
             />
           </div>
@@ -198,7 +200,7 @@ const {_id,name,toyName,image,email,subcategory,price,rating,availableQuantity,d
               type="text"
               name="subCategory"
             defaultValue={subcategory}
-              className="w-full rounded border p-2"
+              className="w-full rounded border p-2 b"
               placeholder="Enter Sub-category"
               required
             />

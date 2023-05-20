@@ -1,12 +1,15 @@
-import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const AddToy = () => {
+  const{user} = useContext(AuthContext)
+  
     const handleSubmit =(e)=>{
         e.preventDefault()
        const image = e.target.pictureUrl.value  
        const toyName = e.target.name.value  
        const name = e.target.sellerName.value  
-       const email = e.target.sellerEmail.value  
+       const email = user.email  
        const subcategory = e.target.subCategory.value  
        const price = e.target.price.value  
        const rating = e.target.rating.value  
@@ -69,9 +72,10 @@ const AddToy = () => {
           <div>
             <label className="block mb-2">Seller Email</label>
             <input
+            disabled
               type="email"
               name="sellerEmail"
-            
+              value={user.email}
               className="w-full rounded border p-2"
               placeholder="Enter Seller Email"
             />
