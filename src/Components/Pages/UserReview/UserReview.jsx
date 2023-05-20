@@ -1,5 +1,18 @@
 import React, { useEffect, useState } from "react";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./UserReview.css";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
+
 const UserReview = () => {
   const [data, setData] = useState([]);
 
@@ -8,7 +21,7 @@ const UserReview = () => {
       .then((res) => res.json())
       .then((result) => setData(result));
   }, []);
-
+console.log(data)
   const handleSubmit = (e) => {
     e.preventDefault();
     const review = e.target.review.value;
@@ -26,35 +39,48 @@ const UserReview = () => {
   };
 
   return (
-    <div className="mt-9 p-10">
+    <div className="mt-9 flex flex-col gap-6 p-10">
       <h1 className="text-center font-bold text-4xl">What They Say</h1>
       <p className="text-center text-cyan-400 mt-4">CUSTOMER TESTIMONIALS</p>
-      <div className="carousel mt-7 h-2/5 text-center mx-auto w-1/2">
-        {data.map((d) => (
-          <div key={d._id} className="card w-96 bg-base-100 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title ">{d.name} says: </h2>
-            <p className="text-secondary-focus font-extrabold">{d.review}</p>
-            <div className="card-actions justify-end">
-            
+      <div className="w-full ">
+      <div className="w-4/6 my-8 mx-auto">
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {
+          data.map(d=>
+            <SwiperSlide key={d._id}>
+            <div className="w-5/6 bg-slate-300 py-12 shadow-xl">
+              <div className="">
+                <p className="font-bold font-mono text-2xl">{d.review}</p>
+                <p className="text-secondary mt-3 font-bold">Says: {d.name}</p>
+              </div>
             </div>
-          </div>
-        </div>
-        ))}
-      </div>
-      <div className="flex justify-center w-full py-2 gap-2">
-        {data.map((_, index) => (
-          <a key={index} href={`#item${index + 1}`} className="btn btn-xs">
-            {index + 1}
-          </a>
-        ))}
-      </div>
+          </SwiperSlide>
+        )
+        }
+
+     
+      </Swiper>
+    </div>
+    </div>
       <h1 className="text-center mt-6 font-bold text-4xl">Tell Us More</h1>
       <div className="mx-auto mt-7 w-1/4">
-        <form onSubmit={handleSubmit}>
+        <form className="flex flex-col justify-center gap-4" onSubmit={handleSubmit}>
           <input type="text" placeholder="Your name" name="name" className="input input-bordered input-info w-full max-w-xs" />
           <textarea placeholder="Your opinion" name="review" className="textarea textarea-bordered textarea-lg w-full max-w-xs"></textarea>
-          <button className="btn btn-accent">Submit</button>
+          <button className="btn btn-accent ml-11 w-56">Submit</button>
         </form>
       </div>
     </div>

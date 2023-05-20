@@ -21,19 +21,19 @@ const Products = () => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <h1 className='text-center text-5xl font-bold'>Customer Loves</h1>
       <p className='text-center text-xl mt-5 text-cyan-400'>Popular Products</p>
-      <div className="grid grid-cols-4 mt-5 gap-x-6 gap-y-6">
+      <div className="md:grid  grid-cols-4 mt-5 gap-x-6 gap-y-6">
         {products.map(data =>
           <div key={data.length} className="card w-80 bg-base-100 shadow-xl">
             <figure><img src={data.photo} alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
-                {data.name}
+                {data.toyname}
                 <div className="badge badge-secondary">NEW</div>
               </h2>
-              <p>{data.price}</p>
+              <p>${data.price}</p>
               <div className="card-actions justify-end">
                 {generateStars(data.stars)}
          

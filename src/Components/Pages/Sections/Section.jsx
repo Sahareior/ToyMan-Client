@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const Section = () => {
 
     return (
-        <div className="my-11 py-14">
+        <div className="my-11  py-14">
             <h1 className="text-center text-5xl font-bold mb-6 py-9">We design toys not just for kids
 but with kids</h1>
         <Swiper
@@ -27,19 +27,27 @@ but with kids</h1>
             clickable: true,
           }}
           modules={[FreeMode, Pagination]}
-          className="mySwiper"
+          className="mySwiper "
         >
-          <SwiperSlide><div className="card card-side  bg-black  shadow-xl">
-  <figure><img src="https://cdn.shopify.com/s/files/1/1152/4590/files/6.png?v=1676907457" alt="Movie"/></figure>
-  <div className="card-body  text-white">
-    <h2 className="card-title text-white">Electic Toys</h2>
-    <p>Click the button to watch on Jetflix app.</p>
-    <div className="card-actions justify-end">
-    <Link to={`/cat/${('Electronic Toys')}`}><button className="btn btn-primary">Go...</button></Link>
-    
+          <SwiperSlide><div className="card card-side bg-black shadow-xl">
+  <figure>
+    <img
+      src="https://cdn.shopify.com/s/files/1/1152/4590/files/6.png?v=1676907457"
+      alt="Movie"
+      className="w-full"
+    />
+  </figure>
+  <div className="card-body text-white">
+    <h2 className="card-title text-white text-center sm:text-left">Electric Toys</h2>
+    <p className="text-center ">Click the button to watch on Jetflix app.</p>
+    <div className="card-actions justify-center sm:justify-end">
+      <Link to={`/cat/${('Electronic Toys')}`}>
+        <button className="btn btn-primary">Go...</button>
+      </Link>
     </div>
   </div>
-</div></SwiperSlide>
+</div>
+</SwiperSlide>
           <SwiperSlide><div className="card card-side  bg-black  shadow-xl">
   <figure><img src="https://cdn.shopify.com/s/files/1/1152/4590/files/5.png?v=1676907497" alt="Movie"/></figure>
   <div className="card-body text-white">

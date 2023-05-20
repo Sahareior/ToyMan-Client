@@ -19,7 +19,7 @@ const Dolls = () => {
     }
     return (
         <div>
-              <div className='grid mx-auto ml-9 mt-9 gap-6 grid-cols-3'>
+              <div className='md:grid mx-auto ml-9 mt-9 gap-6 grid-cols-3'>
             {
                 data.map(d=>
                   <div key={d.length} className="card gap-y-3 card-compact justify-between flex w-96 bg-base-100 shadow-xl">

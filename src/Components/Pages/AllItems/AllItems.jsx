@@ -13,7 +13,7 @@ const AllItems = () => {
 
     return (
       
-        <div className='w-full text-center mt-12'>
+        <div className='w-full  text-center mt-12'>
          
             <h1 className='text-5xl font-bold '>Our Products</h1>
             <p className='font-bole text-cyan-400 text-xl mt-4'>Choose your best product</p>

@@ -10,7 +10,7 @@ const AddToy = () => {
        const toyName = e.target.name.value  
        const name = e.target.sellerName.value  
        const email = user.email  
-       const subcategory = e.target.subCategory.value  
+       const subcategory =  e.target.subCategory.value.toLowerCase()
        const price = e.target.price.value  
        const rating = e.target.rating.value  
        const availableQuantity = e.target.quantity.value  

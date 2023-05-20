@@ -8,13 +8,13 @@ import Layout from './Components/Layout/Layout.jsx'
 import AllToy from './Components/Pages/AllToy.jsx'
 import MyToy from './Components/Pages/MyToy.jsx'
 import AddToy from './Components/Pages/AddToy.jsx'
-import Category from './Components/Pages/Sections/Category.jsx'
+
 import Cart from './Components/Pages/Cart/Cart.jsx'
 import AuthProvider from './Components/Provider/AuthProvider.jsx'
 import Login from './Components/Pages/Login/Login.jsx'
 import Reg from './Components/Pages/Reg/Reg.jsx'
 import PrivetRoute from './Components/Pages/PrivetRoute/PrivetRoute.jsx'
-import UserReview from './Components/Pages/UserReview/UserReview.jsx'
+
 import Details from './Components/Pages/Details/Details.jsx'
 
 const router = createBrowserRouter([
@@ -39,12 +39,7 @@ const router = createBrowserRouter([
         path:'addtoy',
         element: <PrivetRoute><AddToy></AddToy></PrivetRoute>
       },
-      {
-        path:'cat/:name',
-        element:<Category></Category>,
-        loader:({params})=>fetch(`http://localhost:5000/items?subcategory=${params.name}`)
-        
-      },
+     
       {
         path:'cart',
         element:<Cart></Cart>

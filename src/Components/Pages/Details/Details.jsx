@@ -11,9 +11,10 @@ const Details = () => {
   <figure><img src={data.image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title text-2xl">{data.toyName}</h2>
-    <h1 className="text-bold text-xl"><span className="text-secondary-focus">User-Name:{data.name}</span></h1>
-    <h1 className="text-bold text-xl"><span className="text-secondary-focus">${data.price}</span></h1>
-    <h1 className="text-bold text-xl"><span className="text-secondary-focus">{data.rating}*</span></h1>
+    <h1 className="text-bold text-xl"><span className="text-secondary-focus">Added by: {data.name}</span></h1>
+    <h1 className="text-bold text-xl"><span className="text-secondary-focus">Price: ${data.price}</span></h1>
+    <h1 className="text-bold text-xl"><span className="text-secondary-focus">Rating: {data.rating}</span></h1>
+    <h1 className="text-bold text-xl"><span className="text-secondary-focus">Available Quantity: {data.availableQuantity}</span></h1>
     <div className="card-actions justify-end">
       <button className="btn btn-primary">Buy Now</button>
     </div>

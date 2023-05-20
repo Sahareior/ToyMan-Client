@@ -1,10 +1,44 @@
+import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllToy = () => {
     const data = useLoaderData()
 
+    const [result,setResult] = useState([])
+
+    const[input, setInput] = useState("")
+
+    useEffect(() => {
+      if (input.trim() === "") {
+        setResult(data);
+      } else {
+        const find = data.filter(d => d.toyName === input);
+        setResult(find);
+      }
+    }, [input, data]);
+    
+
+
+
+
+
     return (
         <div className="overflow-x-auto mt-10">
+          <div className="my-4 mx-3">
+          <input
+  type="text"
+  placeholder="Type here"
+  name="search"
+  className="input input-bordered input-info w-full max-w-xs"
+  value={input}
+  onChange={(e) => setInput(e.target.value)}
+/>
+
+<button onClick={() => console.log(input)} className="btn btn-success ml-2">
+  Search
+</button>
+
+          </div>
   <table className="table table-compact w-full">
     <thead>
       <tr>
@@ -21,7 +55,7 @@ const AllToy = () => {
 
 
      {
-        data.map(d=>  <tr key={d._id}>
+       result && result.map(d=>  <tr key={d._id}>
              
             <td>{d.name}</td> 
             <td>{d.toyName}</td> 

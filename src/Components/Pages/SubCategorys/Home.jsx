@@ -44,14 +44,14 @@ const Home = () => {
 
   return (
     <div>
-      <div className='grid mx-auto ml-9 mt-9 gap-6 grid-cols-3'>
+      <div className='md:grid mx-auto ml-9 mt-9 justify-between gap-6 grid-cols-3'>
         {
           currentItems.map(d => (
-            <div key={d.length} className="card gap-y-3 card-compact justify-between flex w-96 bg-base-100 shadow-xl">
+            <div key={d.length} className=" gap-y-3 flex justify-between card card-bordered  w-96 bg-base-100 shadow-xl">
               <figure><img src={d.image} alt="Shoes" /></figure>
               <div className="card-body">
                 <h2 className="card-title">{d.toyName}</h2>
-                <div className='card-actions justify-between'>
+                <div className='card-actions '>
                   <h1 className='font-bold'>${d.price}</h1>
                  <h1>{generateStars(5)}</h1>
                 </div>

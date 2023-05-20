@@ -6,23 +6,7 @@ import { getItems } from '../Tools/Tools';
 const Nav = () => {
   const{user,logOut} = useContext(AuthContext)
 
-  // const [total, setTotal] = useState(0);
 
-  // useEffect(() => {
-  //   let newTotal = 0;
-  //   cart.forEach((p) => {
-  //     newTotal += p.price;
-  //   });
-  //   setTotal(newTotal);
-  //   localStorage.setItem('total', newTotal.toString());
-  // }, []);
-  
-  // useEffect(() => {
-  //   const storedTotal = localStorage.getItem('total');
-  //   // if (storedTotal !== null) {
-  //   //   setTotal(Number(storedTotal));
-  //   }
-  // }, []);
   
 
 
@@ -42,21 +26,14 @@ const Nav = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Item 1</a></li>
-              <li tabIndex={0}>
-                <a className="justify-between">
-                  Parent
-                  <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
-                </a>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
+            <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/'>Home</Link></li>
+    <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold '><Link to='/alltoy'>All Toyes</Link></li>
+    <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/mytoy'>My Toyes</Link></li>
+    <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/addtoy'>Add A Toy</Link></li>
+    <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link>Blog</Link></li>
             </ul>
           </div>
-          <div className="sm:display-none">
+          <div className="sd: hidden lg:block">
   <ul className="flex gap-3 orizontal px-1 ">
     <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/'>Home</Link></li>
     <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold '><Link to='/alltoy'>All Toyes</Link></li>
@@ -82,8 +59,8 @@ const Nav = () => {
       </label>
       <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
         <div className="card-body">
-          <span className="font-bold text-lg">8 Items</span>
-          <span className="text-info">Subtotal: $</span>
+          {/* <span className="font-bold text-lg">8 Items</span>
+          <span className="text-info">Subtotal: $</span> */}
           <div className="card-actions">
             <Link to='/cart'><button className="btn btn-primary btn-block">View cart</button></Link>
           </div>

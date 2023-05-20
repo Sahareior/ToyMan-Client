@@ -18,11 +18,11 @@ const CarToy = () => {
       addTodb(d._id)
     }
     return (
-        <div>
-              <div className='grid mx-auto ml-9 mt-9 gap-6 grid-cols-3'>
+        <div className=''>
+              <div className='md:grid mx-auto ml-9 mt-9 gap-6 grid-cols-3'>
             {
                 data.map(d=> <div key={d.length} className="card card-compact w-96 bg-base-100 shadow-xl">
-                <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                <figure><img src={d.image} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title">{d.toyName}</h2>
                   <div className='card-actions justify-between'>
