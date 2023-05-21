@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const AddToy = () => {
   const{user} = useContext(AuthContext)
   useEffect(() => {
-    document.title = "ToyMan|AddToy"; // Update the title here
+    document.title = "ToyMan|AddToy"; 
   }, []);
 
   
@@ -16,7 +16,7 @@ const AddToy = () => {
        const name = e.target.sellerName.value  
        const email = user.email  
        const subcategory =  e.target.subCategory.value.toLowerCase()
-       const price = e.target.price.value  
+       const price = parseInt(e.target.price.value ) 
        const rating = e.target.rating.value  
        const availableQuantity = e.target.quantity.value  
        const description = e.target.description.value 

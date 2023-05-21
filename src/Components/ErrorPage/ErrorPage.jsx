@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
   return (
@@ -7,6 +8,7 @@ const ErrorPage = () => {
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
       <h1 className="mb-96 text-warning text-5xl font-bold">Opps page not found</h1>
+      <Link to='/'><button className='btn btn-secondary text-center'>Back to Home</button></Link>
       
     </div>
   </div>

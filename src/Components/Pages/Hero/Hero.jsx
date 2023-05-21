@@ -15,21 +15,22 @@ const Hero = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
+              <SwiperSlide>
           <div
-            className="hero image1 min-h-screen"
+            className="hero sm:min-h-screen h-screen"
             style={{
               backgroundImage:
                 "url('https://cdn.shopify.com/s/files/1/1152/4590/files/s2_e987b351-26d8-4108-898b-eca9e6a14311.png?v=1676882617')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
+              height:'50%'
             }}
           >
             <div className="hero-overlay bg-opacity-5"></div>
             <div className="hero-content text-center text-neutral-content">
-              <div className="max-w-md ml-56">
-                <h1 className="mb-5 text-7xl font-bold">New Arrival</h1>
+              <div className="max-w-md ml-40">
+                <h1 className="mb-5 md:text-7xl font-bold">New Arrival</h1>
                 <p className="mb-5">One Box Toy</p>
                 <button className="btn btn-primary">Get Started</button>
               </div>
@@ -45,12 +46,13 @@ const Hero = () => {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
+              height:'50%'
             }}
           >
             <div className="hero-overlay bg-opacity-5"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md ml-40">
-                <h1 className="mb-5 text-7xl font-bold">New Arrival</h1>
+                <h1 className="mb-5 md:text-7xl font-bold">New Arrival</h1>
                 <p className="mb-5">One Box Toy</p>
                 <button className="btn btn-primary">Get Started</button>
               </div>
