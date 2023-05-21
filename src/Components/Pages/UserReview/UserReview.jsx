@@ -61,7 +61,7 @@ const UserReview = () => {
       
     }}>
       <h1 className="text-center font-bold text-4xl">What They Say</h1>
-      <p className="text-center text-cyan-400 mt-4">CUSTOMER TESTIMONIALS</p>
+      <p className="text-center font-bold text-red-500 mt-6">CUSTOMER TESTIMONIALS</p>
       <div className="w-full ">
       <div className="w-4/6 my-8 mx-auto">
       <Swiper
@@ -95,10 +95,10 @@ const UserReview = () => {
       </Swiper>
     </div>
     </div>
-      <h1 className="text-center mt-6 font-bold text-4xl">Tell Us More</h1>
-      <div className="mx-auto mt-7 w-1/4">
+      <h1 className="  font-bold mb-16 text-center text-4xl">Tell Us More</h1>
+      <div className="mx-auto mt-7 md:w-1/4">
         <form className="flex flex-col justify-center gap-4" onSubmit={handleSubmit}>
-          <input type="text" placeholder="Your name" name="name" className="input input-bordered input-info w-full max-w-xs" />
+          <input type="text" placeholder="Your name" name="name" className="input input-bordered input-info md:w-full max-w-xs" />
           <textarea placeholder="Your opinion" name="review" className="textarea textarea-bordered textarea-lg w-full max-w-xs"></textarea>
           <button className="btn btn-accent ml-11 w-56">Submit</button>
         </form>
