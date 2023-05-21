@@ -1,8 +1,15 @@
-import { FaCoins } from "react-icons/fa";
+
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 
 const Details = () => {
+
+  useEffect(() => {
+    document.title = "ToyMan|Details"; // Update the title here
+  }, []);
+
+
     const data = useLoaderData()
     console.log(data)
     return (
@@ -16,7 +23,7 @@ const Details = () => {
     <h1 className="text-bold text-xl"><span className="text-secondary-focus">Rating: {data.rating}</span></h1>
     <h1 className="text-bold text-xl"><span className="text-secondary-focus">Available Quantity: {data.availableQuantity}</span></h1>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+      <p>{data.des}</p>
     </div>
   </div>
 </div>

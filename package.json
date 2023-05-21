@@ -18,6 +18,7 @@
     "react-dom": "^18.2.0",
     "react-heroicons-ui": "^1.0.2",
     "react-icons": "^4.8.0",
+    "react-loader-spinner": "^5.3.4",
     "react-photo-album": "^2.2.2",
     "react-photo-gallery": "^8.0.0",
     "react-responsive-modal": "^6.4.1",

@@ -1,9 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const AddToy = () => {
   const{user} = useContext(AuthContext)
+  useEffect(() => {
+    document.title = "ToyMan|AddToy"; // Update the title here
+  }, []);
+
   
     const handleSubmit =(e)=>{
         e.preventDefault()
@@ -18,7 +22,7 @@ const AddToy = () => {
        const description = e.target.description.value 
        const value = {image,name,toyName,email,subcategory,price,rating,availableQuantity,description} 
         
-       fetch('http://localhost:5000/items',{
+       fetch('https://hope-nine.vercel.app/items',{
         method:'POST',
         headers:{
             'content-type':'application/json'
@@ -98,7 +102,7 @@ const AddToy = () => {
               name="subCategory"
             
               className="w-full rounded border p-2"
-              placeholder="Enter Sub-category"
+              placeholder="electronic/dolls/cars "
               required
             />
           </div>

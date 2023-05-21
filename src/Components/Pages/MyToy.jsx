@@ -7,8 +7,14 @@ const MyToy = () => {
   const [clicked,setClicked] = useState({})
   const {user} = useContext(AuthContext)
 
+
   useEffect(() => {
-    fetch(`http://localhost:5000/items?email=${user.email}`)
+    document.title = "ToyMAN|MyToy"; // Update the title here
+  }, []);
+
+
+  useEffect(() => {
+    fetch(`https://hope-nine.vercel.app/items?email=${user.email}`)
       .then(res => res.json())
       .then(result => setData(result));
   }, []);
@@ -41,7 +47,7 @@ const handleUpdate = (e) => {
       description,
     };
   
-    fetch(`http://localhost:5000/items/${_id}`, {
+    fetch(`https://hope-nine.vercel.app/items/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -97,7 +103,7 @@ const handleUpdate = (e) => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/items/${id}`,{
+        fetch(`https://hope-nine.vercel.app/items/${id}`,{
           method: 'DELETE'
       })
       .then(res=> res.json())

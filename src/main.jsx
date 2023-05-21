@@ -16,11 +16,15 @@ import Reg from './Components/Pages/Reg/Reg.jsx'
 import PrivetRoute from './Components/Pages/PrivetRoute/PrivetRoute.jsx'
 
 import Details from './Components/Pages/Details/Details.jsx'
+import Blog from './Components/Blog/Blog.jsx'
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx'
+
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element: <Home></Home>
+    element: <Home></Home>,
+    errorElement: <ErrorPage></ErrorPage>
   },
   {
     path: '/',
@@ -29,7 +33,11 @@ const router = createBrowserRouter([
       {
         path:'alltoy',
         element:<AllToy></AllToy>,
-        loader:()=> fetch('http://localhost:5000/items')
+        loader:()=> fetch('https://hope-nine.vercel.app/items')
+      },
+      {
+        path: 'blog',
+        element: <Blog></Blog>
       },
       {
         path:'mytoy',
@@ -55,7 +63,7 @@ const router = createBrowserRouter([
       {
         path:'details/:id',
         element:<PrivetRoute><Details></Details>,</PrivetRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/items/${params.id}`)
+        loader:({params})=> fetch(`https://hope-nine.vercel.app/items/${params.id}`)
       }
       
     ]

@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react';
 import AllItems from '../Pages/AllItems/AllItems';
 import Hero from '../Pages/Hero/Hero';
 import PhotoGallery from '../Pages/PhotoGallery/PhotoGallery';
@@ -10,6 +11,10 @@ import Footer from '../Shared/Footer';
 import Nav from '../Shared/Nav';
 
 const Home = () => {
+    useEffect(() => {
+        document.title = "ToyMan|MainPage"; // Update the title here
+      }, []);
+    
     return (
         <div >
             <Nav></Nav>

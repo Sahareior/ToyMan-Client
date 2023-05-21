@@ -1,6 +1,6 @@
 import  { createContext, useEffect, useState } from 'react';
 import { getItems } from '../Tools/Tools';
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import {  GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { app } from '../Firebase/Firebase.config';
 
 
@@ -25,7 +25,20 @@ const AuthProvider = ({children}) => {
     
     const logOut = () => {
         setLoading(true);
+        localStorage.clear()
         return signOut(auth);
+    }
+
+    const googleSignIn =()=>{
+        const provider = new GoogleAuthProvider()
+        signInWithPopup(auth,provider)
+        .then(result => {
+            const user = result.id
+            console.log(user)
+        }).catch(error => {
+            const errMsg = error.message
+            console.log(errMsg)
+        })
     }
 
 
@@ -47,7 +60,7 @@ const AuthProvider = ({children}) => {
         const storedCart = getItems();
         const ids = Object.keys(storedCart);
         
-        const loadedProducts = await fetch(`http://localhost:5000/productsByIds`, {
+        const loadedProducts = await fetch(`https://hope-nine.vercel.app/productsByIds`, {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'
@@ -86,7 +99,8 @@ const AuthProvider = ({children}) => {
         user,
         auth,
         cart,
-        setCart
+        setCart,
+        googleSignIn
     }
     return (
         <AuthContext.Provider value={authInfo}>

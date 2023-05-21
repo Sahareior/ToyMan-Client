@@ -17,7 +17,7 @@ const Hero = () => {
       >
         <SwiperSlide>
           <div
-            className="hero min-h-screen"
+            className="hero image1 min-h-screen"
             style={{
               backgroundImage:
                 "url('https://cdn.shopify.com/s/files/1/1152/4590/files/s2_e987b351-26d8-4108-898b-eca9e6a14311.png?v=1676882617')",

@@ -21,11 +21,11 @@
     height: 100%;
     object-fit: cover;
   }
-  @media (max-width: 640px) {
-    .hero-content .max-w-md {
-      margin-left: 0;
-    }
-  
+@media (max-width: 640px) {
+  .hero {
+    background-size: contain;
   }
+}
+
   
   

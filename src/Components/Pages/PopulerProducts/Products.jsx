@@ -10,7 +10,7 @@ const Products = () => {
   }, []);
 
   useEffect(() => {
-    fetch('products.json')
+    fetch('https://hope-nine.vercel.app/products')
       .then(res => res.json())
       .then(data => setProducts(data));
   }, []);
@@ -25,10 +25,10 @@ const Products = () => {
   };
 
   return (
-    <div className="w-full">
+    <div data-aos="fade-up" className="w-full ">
       <h1 className='text-center text-5xl font-bold'>Customer Loves</h1>
       <p className='text-center text-xl mt-5 text-cyan-400'>Popular Products</p>
-      <div className="md:grid  grid-cols-4 mt-5 gap-x-6 gap-y-6">
+      <div className="grid ml-24 md:ml-0  md:grid-cols-4 mt-5 gap-x-6 gap-y-6">
         {products.map(data =>
           <div data-aos="flip-up" key={data.length} className="card w-80 bg-base-100 shadow-xl">
             <figure><img src={data.photo} alt="Shoes" /></figure>
@@ -38,9 +38,9 @@ const Products = () => {
                 <div className="badge badge-secondary">NEW</div>
               </h2>
               <p>${data.price}</p>
-              <div className="card-actions justify-end">
-                {generateStars(data.stars)}
-         
+              <div className="card-actions justify-between">
+                <div>{generateStars(data.stars)}</div>
+              <button className="btn btn-secondary">Buy</button>
               </div>
             </div>
           </div>

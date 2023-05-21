@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const [error,setError] = useState(null)
@@ -9,7 +10,7 @@ const Login = () => {
     
     const path = location.state?.from?.pathname || '/'
 
-    const{signIn} = useContext(AuthContext)
+    const{signIn,googleSignIn} = useContext(AuthContext)
     
     const handleSubmit = (e)=>{
         e.preventDefault()
@@ -33,16 +34,16 @@ const Login = () => {
           
     }
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url("https://img.freepik.com/free-vector/seamless-gold-rhombus-grid-pattern-black-background_53876-97589.jpg?size=626&ext=jpg")` }}>
+        <div className="hero w-full min-h-screen" style={{ backgroundImage: `url("https://img.freepik.com/free-vector/seamless-gold-rhombus-grid-pattern-black-background_53876-97589.jpg?size=626&ext=jpg")` }}>
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="w-full">
-          <div className="hero mx-auto w-11/12 min-h-screen ">
-  <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero-content text-center w-full text-neutral-content">
+          <div className="w-full mt-6">
+          <div className="mt-9 mx-auto w-11/12 min-h-screen ">
+  <div className="hero-content gap-8 flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold">Login now!</h1>
-      <p className="py-3">Sign in with Google</p>
-      <p className="py-3">Sign in with Github.</p>
+      <p>You can Sign in with <button onClick={googleSignIn} className='btn btn-active hover:text-emerald-400 hover:bg-white mt-6'> <FaGoogle></FaGoogle></button></p>
+     
     </div>
     <div className="card flex-shrink-0 w-full max-w-md shadow-2xl ">
         <form onSubmit={handleSubmit}> 

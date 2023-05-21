@@ -20,7 +20,10 @@ const Nav = () => {
   const photo = user? <img src={user.photoURL  } />: " "
     return (
         <div className="navbar py-5  bg-base-100">
+          
         <div className="navbar-start">
+          
+          
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -30,7 +33,7 @@ const Nav = () => {
     <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold '><Link to='/alltoy'>All Toyes</Link></li>
     <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/mytoy'>My Toyes</Link></li>
     <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/addtoy'>Add A Toy</Link></li>
-    <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link>Blog</Link></li>
+    <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/blog'>Blog</Link></li>
             </ul>
           </div>
           <div className="sd: hidden lg:block">
@@ -39,7 +42,7 @@ const Nav = () => {
     <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold '><Link to='/alltoy'>All Toyes</Link></li>
     <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/mytoy'>My Toyes</Link></li>
     <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/addtoy'>Add A Toy</Link></li>
-    <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link>Blog</Link></li>
+    <li className='text-lg hover:text-violet-500 hover:scale-110 font-bold'><Link to='/blog'>Blog</Link></li>
   </ul>
 </div>
 
