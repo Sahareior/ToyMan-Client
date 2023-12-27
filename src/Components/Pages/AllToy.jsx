@@ -19,7 +19,7 @@ const AllToy = () => {
   useEffect(() => {
     const formattedInput = input.trim().replace(/\s/g, "");
 
-    if (formattedInput === "") {
+    if (formattedInput == "") {
       setResult(data);
     } else {
       const find = data.filter((d) =>
